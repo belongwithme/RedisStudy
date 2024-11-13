@@ -49,8 +49,12 @@ struct __attribute__ ((__packed__)) sdshdr5 {
     char buf[];
 };
 struct __attribute__ ((__packed__)) sdshdr8 {
+   //使用了多少
     uint8_t len; /* used */
+    //一共分配多少内存
     uint8_t alloc; /* excluding the header and null terminator */
+    //alloc-len : 预留空间大小
+    //标记哪个分类,当前为SDS_TYPE_8
     unsigned char flags; /* 3 lsb of type, 5 unused bits */
     char buf[];
 };
